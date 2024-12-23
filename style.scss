@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin generateBgGreen($x, $y, $z) {
+  background-color: rgb($x, $y, $z);
+}
+
+.bg {
+  background-color: rgb(0, 1, 8);
+}
+
+@for $col from 0 to 255 {
+  .bg-green-#{$col} {
+    @include generateBgGreen(0, $col, $col/2);
+  }
+  @if $col * 8 < 255 {
+    .bg-blue-#{$col} {
+      @include generateBgGreen(0, $col, $col * 8);
+    }
+  } @else if $col == 100 {
+    .hi {
+      background-color: antiquewhite;
+    }
+  } @else {
+    .bg-blue-#{$col} {
+      @include generateBgGreen(0, $col, $col * 2);
+    }
+  }
+  .box-#{$col} {
+    height: $col + 100px;
+    width: $col + 100px;
+  }
+  .gap-#{$col} {
+    gap: $col + px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+// @for $i from 1 to 100 {
+//   @if ($i > 10 and $i<50) {
+//     .box-#{$i} {
+//       height: $i + 50px;
+//       width: $i + 50px;
+//     }
+//   } @else {
+//     .bg-col-#{$i} {
+//       background-color: rgb($i, $i + 20, $i + 40);
+//     }
+//   }
+// }
