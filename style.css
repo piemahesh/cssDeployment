@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: blue;
+  font-size: 2em;
 }
 
 .bg {
@@ -4358,4 +4358,4 @@
 
 .flex-wrap {
   flex-wrap: wrap;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
